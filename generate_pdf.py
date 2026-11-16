@@ -1,0 +1,446 @@
+import os
+
+def create_resume_pdf(filename="public/Vaibhav_Rai_Resume.pdf"):
+    os.makedirs(os.path.dirname(filename), exist_ok=True)
+    
+    # We will build a clean multi-object PDF with fonts, text, and lines
+    pdf_content = """%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+
+3 0 obj
+<< /Type /Page
+   /Parent 2 0 R
+   /MediaBox [0 0 612 792]
+   /Resources <<
+     /Font <<
+       /F1 4 0 R
+       /F2 5 0 R
+       /F3 6 0 R
+     >>
+   >>
+   /Contents 7 0 R
+>>
+endobj
+
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+
+6 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Oblique >>
+endobj
+"""
+    
+    # PDF Stream operations (drawing text and dividers)
+    stream_lines = [
+        # Top banner background bar
+        "0.03 0.05 0.1 rg",
+        "0 720 612 72 re f",
+        # Name
+        "BT",
+        "/F1 22 Tf",
+        "1 1 1 rg",
+        "40 755 Td",
+        "(VAIBHAV RAI A V) Tj",
+        "ET",
+        # Subtitle
+        "BT",
+        "/F1 10 Tf",
+        "0.22 0.74 0.93 rg",
+        "40 738 Td",
+        "(AI & MACHINE LEARNING ENGINEER  |  VTU BRANCH TOPPER  |  PYTHON DEVELOPER) Tj",
+        "ET",
+        # Contact line
+        "BT",
+        "/F2 9 Tf",
+        "0.8 0.85 0.9 rg",
+        "40 725 Td",
+        "(Email: vaibhurai3@gmail.com  |  Phone: +91 9539755923  |  Location: Kerala, India) Tj",
+        "ET",
+        
+        # Section 1: Education
+        "0.23 0.51 0.96 rg",
+        "40 695 532 1 re f",
+        "BT",
+        "/F1 12 Tf",
+        "0.05 0.1 0.25 rg",
+        "40 700 Td",
+        "(EDUCATION & ACADEMICS) Tj",
+        "ET",
+        "BT",
+        "/F1 10 Tf",
+        "0.1 0.1 0.1 rg",
+        "40 680 Td",
+        "(Bachelor of Engineering - Artificial Intelligence & Machine Learning) Tj",
+        "ET",
+        "BT",
+        "/F2 9 Tf",
+        "0.3 0.3 0.3 rg",
+        "40 668 Td",
+        "(Yenepoya Institute of Technology, Karnataka | CGPA: 9.36 | VTU Branch Topper - 1st, 2nd & 3rd Year) Tj",
+        "ET",
+        
+        # Section 2: Technical Skills
+        "0.23 0.51 0.96 rg",
+        "40 645 532 1 re f",
+        "BT",
+        "/F1 12 Tf",
+        "0.05 0.1 0.25 rg",
+        "40 650 Td",
+        "(TECHNICAL SKILLS) Tj",
+        "ET",
+        "BT",
+        "/F1 9 Tf",
+        "0.15 0.2 0.3 rg",
+        "40 632 Td",
+        "(Programming:) Tj",
+        "/F2 9 Tf",
+        "0.25 0.25 0.25 rg",
+        "70 0 Td",
+        "(Python, SQL, R, Julia) Tj",
+        "ET",
+        "BT",
+        "/F1 9 Tf",
+        "0.15 0.2 0.3 rg",
+        "40 620 Td",
+        "(AI & ML:) Tj",
+        "/F2 9 Tf",
+        "0.25 0.25 0.25 rg",
+        "50 0 Td",
+        "(Machine Learning, Deep Learning, NLP, Generative AI, RAG, Prompt Engineering) Tj",
+        "ET",
+        "BT",
+        "/F1 9 Tf",
+        "0.15 0.2 0.3 rg",
+        "40 608 Td",
+        "(Computer Vision:) Tj",
+        "/F2 9 Tf",
+        "0.25 0.25 0.25 rg",
+        "78 0 Td",
+        "(YOLOv8, OpenCV, Image Preprocessing, Image Augmentation) Tj",
+        "ET",
+        "BT",
+        "/F1 9 Tf",
+        "0.15 0.2 0.3 rg",
+        "40 596 Td",
+        "(AI & LLM Stack:) Tj",
+        "/F2 9 Tf",
+        "0.25 0.25 0.25 rg",
+        "72 0 Td",
+        "(Gemini API, Vertex AI, OpenAI API, Vector Retrieval, LangChain/RAG concepts) Tj",
+        "ET",
+        "BT",
+        "/F1 9 Tf",
+        "0.15 0.2 0.3 rg",
+        "40 584 Td",
+        "(Analytics & Tools:) Tj",
+        "/F2 9 Tf",
+        "0.25 0.25 0.25 rg",
+        "78 0 Td",
+        "(Pandas, NumPy, Matplotlib, Tableau, Power BI, Plotly, Flask, Streamlit, Google Cloud, Git) Tj",
+        "ET",
+        
+        # Section 3: Featured Projects
+        "0.23 0.51 0.96 rg",
+        "40 560 532 1 re f",
+        "BT",
+        "/F1 12 Tf",
+        "0.05 0.1 0.25 rg",
+        "40 565 Td",
+        "(FEATURED AI/ML PROJECTS) Tj",
+        "ET",
+        
+        # Project 1
+        "BT",
+        "/F1 10 Tf",
+        "0.1 0.1 0.1 rg",
+        "40 545 Td",
+        "(1. Autorickshaw Detection & Behavior Analysis) Tj",
+        "/F3 9 Tf",
+        "0.35 0.4 0.5 rg",
+        "220 0 Td",
+        "[YOLOv8, Python, OpenCV, Computer Vision]",
+        "ET",
+        "BT",
+        "/F2 8.5 Tf",
+        "0.25 0.25 0.25 rg",
+        "40 533 Td",
+        "(- Trained custom YOLOv8 model achieving 95%+ detection accuracy through dataset refinement and augmentation.) Tj",
+        "ET",
+        "BT",
+        "/F2 8.5 Tf",
+        "0.25 0.25 0.25 rg",
+        "40 522 Td",
+        "(- Engineered automated trajectory tracking and spatial behavior analysis in dense traffic conditions.) Tj",
+        "ET",
+
+        # Project 2
+        "BT",
+        "/F1 10 Tf",
+        "0.1 0.1 0.1 rg",
+        "40 504 Td",
+        "(2. Low-Latency Audio RAG System - Pace Wisdom) Tj",
+        "/F3 9 Tf",
+        "0.35 0.4 0.5 rg",
+        "240 0 Td",
+        "[Python, RAG, STT, Vector Retrieval, TTS]",
+        "ET",
+        "BT",
+        "/F2 8.5 Tf",
+        "0.25 0.25 0.25 rg",
+        "40 492 Td",
+        "(- Designed and deployed real-time voice RAG pipeline achieving sub-second audio query turnaround.) Tj",
+        "ET",
+        "BT",
+        "/F2 8.5 Tf",
+        "0.25 0.25 0.25 rg",
+        "40 481 Td",
+        "(- Integrated low-latency vector embeddings search with streaming neural speech synthesis.) Tj",
+        "ET",
+
+        # Project 3
+        "BT",
+        "/F1 10 Tf",
+        "0.1 0.1 0.1 rg",
+        "40 463 Td",
+        "(3. LingoLeap - AI-Based Multilingual Learning Platform) Tj",
+        "/F3 9 Tf",
+        "0.35 0.4 0.5 rg",
+        "250 0 Td",
+        "[Vertex AI, Gemini, NLP, RAG]",
+        "ET",
+        "BT",
+        "/F2 8.5 Tf",
+        "0.25 0.25 0.25 rg",
+        "40 451 Td",
+        "(- Built AI-native platform with real-time speaking assessment, automated grammar correction, and gamified tasks.) Tj",
+        "ET",
+        "BT",
+        "/F2 8.5 Tf",
+        "0.25 0.25 0.25 rg",
+        "40 440 Td",
+        "(- Supported multilingual LSRW progression with personalized diagnostic feedback.) Tj",
+        "ET",
+
+        # Project 4
+        "BT",
+        "/F1 10 Tf",
+        "0.1 0.1 0.1 rg",
+        "40 422 Td",
+        "(4. Phishing Email Detection System) Tj",
+        "/F3 9 Tf",
+        "0.35 0.4 0.5 rg",
+        "190 0 Td",
+        "[Python, Machine Learning, Cybersecurity]",
+        "ET",
+        "BT",
+        "/F2 8.5 Tf",
+        "0.25 0.25 0.25 rg",
+        "40 410 Td",
+        "(- Developed machine learning detection system evaluating email metadata, URL entropy, and urgency indicators.) Tj",
+        "ET",
+        
+        # Section 4: Professional Experience & Leadership
+        "0.23 0.51 0.96 rg",
+        "40 388 532 1 re f",
+        "BT",
+        "/F1 12 Tf",
+        "0.05 0.1 0.25 rg",
+        "40 393 Td",
+        "(EXPERIENCE & LEADERSHIP) Tj",
+        "ET",
+        
+        "BT",
+        "/F1 9.5 Tf",
+        "0.1 0.1 0.1 rg",
+        "40 374 Td",
+        "(President - Yen Artificia) Tj",
+        "/F3 8.5 Tf",
+        "0.4 0.4 0.4 rg",
+        "140 0 Td",
+        "(Sep 2026 - Present | Yenepoya Institute of Tech)",
+        "ET",
+        "BT",
+        "/F2 8.5 Tf",
+        "0.25 0.25 0.25 rg",
+        "40 363 Td",
+        "(- Leading AI/ML student community; Organized PINNACLE 3rd International Symposium, Project Expo, QUORIA AI Summit.) Tj",
+        "ET",
+
+        "BT",
+        "/F1 9.5 Tf",
+        "0.1 0.1 0.1 rg",
+        "40 348 Td",
+        "(AI & Software Development Intern - Kyeal Wellness) Tj",
+        "/F3 8.5 Tf",
+        "0.4 0.4 0.4 rg",
+        "210 0 Td",
+        "(Sep 2026 - Present | Remote)",
+        "ET",
+        "BT",
+        "/F2 8.5 Tf",
+        "0.25 0.25 0.25 rg",
+        "40 337 Td",
+        "(- Developing AI-powered applications, software automation workflows, and machine learning pipelines.) Tj",
+        "ET",
+
+        "BT",
+        "/F1 9.5 Tf",
+        "0.1 0.1 0.1 rg",
+        "40 322 Td",
+        "(AI Engineering & Operations Intern - MAC25AI) Tj",
+        "/F3 8.5 Tf",
+        "0.4 0.4 0.4 rg",
+        "190 0 Td",
+        "(Oct 2026 - Present | Hybrid)",
+        "ET",
+        "BT",
+        "/F2 8.5 Tf",
+        "0.25 0.25 0.25 rg",
+        "40 311 Td",
+        "(- Conducting AI engineering operational workflows, model evaluations, and enterprise deployments.) Tj",
+        "ET",
+
+        "BT",
+        "/F1 9.5 Tf",
+        "0.1 0.1 0.1 rg",
+        "40 296 Td",
+        "(Treasurer-cum-Secretary - YenFinity) Tj",
+        "/F3 8.5 Tf",
+        "0.4 0.4 0.4 rg",
+        "170 0 Td",
+        "(May 2026 - Present)",
+        "ET",
+        "BT",
+        "/F2 8.5 Tf",
+        "0.25 0.25 0.25 rg",
+        "40 285 Td",
+        "(- Managed organizational and financial planning; organized FusionVerse 1.0 Hackathon for pre-university students.) Tj",
+        "ET",
+
+        "BT",
+        "/F1 9.5 Tf",
+        "0.1 0.1 0.1 rg",
+        "40 270 Td",
+        "(Vice President - Yen Artificia) Tj",
+        "/F3 8.5 Tf",
+        "0.4 0.4 0.4 rg",
+        "150 0 Td",
+        "(Sep 2025 - Sep 2026)",
+        "ET",
+        "BT",
+        "/F2 8.5 Tf",
+        "0.25 0.25 0.25 rg",
+        "40 259 Td",
+        "(- Served as Main Coordinator for Matrix Fusion 4.0, a 24-hour National-Level Hackathon; coordinated technical sessions.) Tj",
+        "ET",
+
+        # Section 5: Achievements & Certifications
+        "0.23 0.51 0.96 rg",
+        "40 238 532 1 re f",
+        "BT",
+        "/F1 12 Tf",
+        "0.05 0.1 0.25 rg",
+        "40 243 Td",
+        "(KEY ACHIEVEMENTS & CERTIFICATIONS) Tj",
+        "ET",
+        "BT",
+        "/F2 8.5 Tf",
+        "0.2 0.2 0.2 rg",
+        "40 226 Td",
+        "(* VTU Branch Topper - 1st, 2nd & 3rd Year across engineering curriculum.) Tj",
+        "ET",
+        "BT",
+        "/F2 8.5 Tf",
+        "0.2 0.2 0.2 rg",
+        "40 214 Td",
+        "(* ISTE State-Level Hackathon: Top 4 College Mini-Hackathon Qualification & ISTE 2025 Platform Developer.) Tj",
+        "ET",
+        "BT",
+        "/F2 8.5 Tf",
+        "0.2 0.2 0.2 rg",
+        "40 202 Td",
+        "(* Anveshan 2025 - IEEE Bangalore Section Hackathon Participation.) Tj",
+        "ET",
+        "BT",
+        "/F2 8.5 Tf",
+        "0.2 0.2 0.2 rg",
+        "40 190 Td",
+        "(* Certifications: NVIDIA AI Infrastructure | MongoDB University | OpenAI GenAI Buildathon | Google Cloud GenAI.) Tj",
+        "ET",
+    ]
+    
+    stream_data = "\n".join(stream_lines)
+    stream_length = len(stream_data.encode('utf-8'))
+    
+    stream_obj = f"""7 0 obj
+<< /Length {stream_length} >>
+stream
+{stream_data}
+endstream
+endobj
+"""
+
+    xref_offsets = []
+    
+    # Let's assemble everything accurately
+    body_parts = [
+        pdf_content,
+        stream_obj
+    ]
+    
+    full_body = "".join(body_parts)
+    
+    # Calculate xref
+    header = "%PDF-1.4\n"
+    # To ensure exact xref offsets, calculate from start
+    objects = [
+        "1 0 obj\n<< /Type /Catalog /Pages 2 0 R >>\nendobj\n",
+        "2 0 obj\n<< /Type /Pages /Kids [3 0 R] /Count 1 >>\nendobj\n",
+        "3 0 obj\n<< /Type /Page\n   /Parent 2 0 R\n   /MediaBox [0 0 612 792]\n   /Resources <<\n     /Font <<\n       /F1 4 0 R\n       /F2 5 0 R\n       /F3 6 0 R\n     >>\n   >>\n   /Contents 7 0 R\n>>\nendobj\n",
+        "4 0 obj\n<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>\nendobj\n",
+        "5 0 obj\n<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>\nendobj\n",
+        "6 0 obj\n<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Oblique >>\nendobj\n",
+        stream_obj
+    ]
+    
+    current_offset = len(header.encode('utf-8'))
+    offsets = [0]
+    for obj in objects:
+        offsets.append(current_offset)
+        current_offset += len(obj.encode('utf-8'))
+        
+    xref = "xref\n0 8\n0000000000 65535 f \n"
+    for o in offsets[1:]:
+        xref += f"{o:010d} 00000 n \n"
+        
+    trailer = f"""trailer
+<< /Size 8
+   /Root 1 0 R
+>>
+startxref
+{current_offset}
+%%EOF
+"""
+    
+    with open(filename, "wb") as f:
+        f.write(header.encode('utf-8'))
+        for obj in objects:
+            f.write(obj.encode('utf-8'))
+        f.write(xref.encode('utf-8'))
+        f.write(trailer.encode('utf-8'))
+        
+    print(f"Generated {filename} successfully ({os.path.getsize(filename)} bytes)")
+
+if __name__ == "__main__":
+    create_resume_pdf()
