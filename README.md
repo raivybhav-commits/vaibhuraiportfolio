@@ -16,7 +16,7 @@ A modern, high-performance personal portfolio website built with **React 19, Typ
   3. *LingoLeap – AI-Based Multilingual Learning Platform* (Vertex AI, Gemini Pro, LSRW progression)
   4. *Phishing Email Detection System* (Ensemble ML, Cybersecurity heuristics)
 - **Deep-Dive Architecture Modals**: Click "Explore Architecture" on any project to view technical challenge vs. solution, system architecture pipelines, and performance benchmarks.
-- **Featured Leadership Section (PINNACLE)**: Case-study showcase of the 3rd International-Level Technical Symposium (*Project Expo*, *Tech Fest*, and *QUORIA – AI Summit*).
+- **Featured Leadership Section (PINNACLE)**: Case-study showcase of the 3-day International-Level Technical Symposium (*Project Expo*, *Tech Fest*, and *QUORIA – AI Summit*).
 - **Vertical Experience Timeline**: Vertical connected timeline detailing internships at *Kyeal Wellness* & *MAC25AI*, alongside leadership roles at *Yen Artificia* and *YenFinity*.
 - **Honors & Credentials**: Highlights consecutive *VTU Branch Topper (1st, 2nd, 3rd Year)*, *ISTE State-Level Hackathon*, *IEEE Anveshan*, and certifications from *NVIDIA*, *MongoDB*, *OpenAI*, and *Google Cloud*.
 - **Downloadable Resume**: Built-in interactive CV viewer + one-click download for `Vaibhav_Rai_Resume.pdf`.

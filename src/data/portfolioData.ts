@@ -244,7 +244,7 @@ export const EXPERIENCES: Experience[] = [
     type: "Leadership",
     highlights: [
       "Leading the premier Artificial Intelligence and Machine Learning student community across technical initiatives, workshops, and student mentorship.",
-      "Spearheaded and organized PINNACLE, the 3rd International-Level Technical Symposium featuring international delegates, technical papers, and industry keynotes.",
+      "Spearheaded and organized PINNACLE, the 3-day International-Level Technical Symposium featuring international delegates, technical papers, and industry keynotes.",
       "Directly coordinated the flagship Project Expo, Tech Fest, and the flagship QUORIA AI Summit.",
       "Designed and hosted hands-on workshops on Applied Machine Learning, Computer Vision, and Generative AI workflows."
     ],
@@ -309,7 +309,7 @@ export const EXPERIENCES: Experience[] = [
 ];
 
 export const PINNACLE_DETAILS = {
-  title: "PINNACLE – 3rd International-Level Technical Symposium",
+  title: "PINNACLE – 3-day International-Level Technical Symposium",
   role: "President & Event Organizer – Yen Artificia",
   institution: "Yenepoya Institute of Technology",
   overview: "Led the end-to-end strategic planning, organization, and execution of a major international-level technical symposium uniting students, academics, and industry innovators.",

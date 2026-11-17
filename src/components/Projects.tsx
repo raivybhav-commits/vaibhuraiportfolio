@@ -2,21 +2,17 @@ import React, { useState } from 'react';
 import { 
   ExternalLink, 
   Layers, 
-  ArrowUpRight, 
-  CheckCircle2, 
-  Eye
+  CheckCircle2
 } from 'lucide-react';
 import { FEATURED_PROJECTS } from '../data/portfolioData';
-import type { Project } from '../types/portfolio';
 import { ProjectVisual } from './ProjectVisual';
 import { GithubIcon } from './Icons';
 
 interface ProjectsProps {
-  onSelectProject: (project: Project) => void;
   onOpenPlaceholder: (title: string, url: string) => void;
 }
 
-export const Projects: React.FC<ProjectsProps> = ({ onSelectProject, onOpenPlaceholder }) => {
+export const Projects: React.FC<ProjectsProps> = ({ onOpenPlaceholder }) => {
   const [filter, setFilter] = useState<string>('All');
 
   const categories = ['All', 'Computer Vision', 'Generative AI & RAG', 'Cybersecurity'];
@@ -137,15 +133,6 @@ export const Projects: React.FC<ProjectsProps> = ({ onSelectProject, onOpenPlace
 
               {/* Card Footer Actions */}
               <div className="p-5 sm:p-6 bg-slate-50/70 border-t border-slate-100 flex items-center justify-between gap-3">
-                <button
-                  onClick={() => onSelectProject(project)}
-                  className="px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-medium text-xs shadow-md shadow-blue-600/20 transition-all flex items-center gap-2 cursor-pointer"
-                >
-                  <Eye className="w-3.5 h-3.5" />
-                  <span>Explore Architecture</span>
-                  <ArrowUpRight className="w-3.5 h-3.5" />
-                </button>
-
                 <div className="flex items-center gap-2">
                   <button
                     onClick={() => onOpenPlaceholder(`Repository: ${project.title}`, project.githubPlaceholder)}

@@ -28,7 +28,7 @@ export const PinnacleSpecial: React.FC = () => {
             PINNACLE
           </h2>
           <p className="mt-2 text-lg font-mono text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-sky-600 font-bold">
-            3rd International-Level Technical Symposium
+            3-day International-Level Technical Symposium
           </p>
           <div className="w-20 h-1 bg-gradient-to-r from-blue-600 to-sky-400 mx-auto mt-4 rounded-full" />
         </div>
@@ -61,7 +61,7 @@ export const PinnacleSpecial: React.FC = () => {
               </h3>
 
               <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-                As <strong className="text-slate-900">President of Yen Artificia</strong>, I led the strategic conceptualization, planning, sponsorships, cross-departmental operations, and execution of <strong>PINNACLE</strong>, the landmark 3rd International-Level Technical Symposium at Yenepoya Institute of Technology.
+                As <strong className="text-slate-900">President of Yen Artificia</strong>, I led the strategic conceptualization, planning, sponsorships, cross-departmental operations, and execution of <strong>PINNACLE</strong>, the landmark 3-day International-Level Technical Symposium at Yenepoya Institute of Technology.
               </p>
 
               <p className="text-slate-600 text-sm sm:text-base leading-relaxed">

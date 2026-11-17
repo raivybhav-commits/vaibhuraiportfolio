@@ -83,7 +83,6 @@ export function App() {
 
         {/* 4. Featured Projects */}
         <Projects
-          onSelectProject={(project) => setSelectedProject(project)}
           onOpenPlaceholder={handleOpenPlaceholder}
         />
 
